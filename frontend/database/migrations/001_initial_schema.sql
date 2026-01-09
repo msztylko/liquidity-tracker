@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS migrations (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS liquidity_data (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  date TEXT NOT NULL UNIQUE,
+  total_assets REAL NOT NULL,
+  reverse_repo REAL NOT NULL,
+  tga REAL NOT NULL,
+  reserve_balances REAL NOT NULL,
+  discount_window REAL NOT NULL,
+  net_liquidity REAL NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
